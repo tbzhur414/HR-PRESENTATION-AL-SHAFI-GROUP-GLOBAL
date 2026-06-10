@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alshafi Group Annual Conference 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        
+        .slide { transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navy-bg { background: linear-gradient(135deg, #0a1428 0%, #1a2338 100%); }
+        .emerald-accent { color: #10b981; }
+        .gold-accent { color: #facc15; }
+        
+        .particle {
+            position: absolute;
+            background: rgba(16, 185, 129, 0.3);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0.4; }
+            100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+        }
+
+        .team-img { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .team-img:hover { transform: scale(1.05); }
+
+        /* ===== TEXT SIZE IMPROVEMENTS ===== */
+        .slide h1 { font-size: 4.2rem !important; line-height: 1.1; }
+        .slide h2 { font-size: 3.2rem !important; line-height: 1.15; }
+        .slide h3 { font-size: 2.25rem !important; }
+        .slide h4 { font-size: 1.35rem !important; }
+        .slide p, .slide div { font-size: 1.35rem !important; line-height: 1.55; }
+        
+        @media (min-width: 768px) {
+            .slide h1 { font-size: 5rem !important; }
+            .slide h2 { font-size: 3.8rem !important; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-hidden">
+    <div id="presentation" class="relative min-h-screen navy-bg flex items-center justify-center">
+        <!-- Navigation -->
+        <div class="absolute top-6 left-6 z-50 flex items-center gap-3">
+            <div class="flex items-center gap-3">
+                <img src="IMAGES/Al Shafi Logo1.png" 
+                     alt="Alshafi Group Logo" 
+                     class="h-12 w-auto">
+                <span class="heading-font text-2xl font-bold tracking-widest text-white">AL-SHAFI GROUP GLOBAL</span>
+            </div>
+        </div>
+        
+        <div class="absolute top-6 right-6 z-50 flex gap-2">
+            <button onclick="prevSlide()" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full flex items-center gap-2 transition">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button onclick="nextSlide()" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full flex items-center gap-2 transition">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button onclick="toggleAutoPlay()" id="playBtn" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2 rounded-full flex items-center gap-2 transition">
+                <i class="fa-solid fa-play"></i> <span id="playText">Auto Play</span>
+            </button>
+        </div>
+
+        <!-- Slides Container -->
+        <div id="slides" class="w-full max-w-5xl mx-auto relative h-[85vh] flex items-center">
+
+            <!-- Slide 1: Title -->
+            <div id="slide-0" class="slide absolute inset-0 flex flex-col items-center justify-center text-center px-8 opacity-100">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 bg-emerald-900/50 text-emerald-300 px-6 py-2 rounded-full mb-8 text-base tracking-widest">
+                        <i class="fa-solid fa-calendar"></i> JUNE 2026
+                    </div>
+                    <h1 class="heading-font text-7xl md:text-8xl font-bold leading-tight mb-6 gold-accent">
+                        AL-SHAFI GROUP GLOBAL<br>ANNUAL CONFERENCE
+                    </h1>
+                    <p class="text-3xl text-gray-300 mb-12">HR &amp; Corporate Sales Outlook Plan</p>
+                    <div onclick="nextSlide()" class="cursor-pointer inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 rounded-2xl text-xl font-medium transition transform hover:scale-105">
+                        Begin Presentation <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Opening -->
+            <div id="slide-1" class="slide absolute inset-0 flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none">
+                <div class="max-w-4xl">
+                    <h2 class="heading-font text-6xl font-semibold mb-10 gold-accent">Welcome</h2>
+                    <div class="text-2xl leading-relaxed text-gray-200">
+                        Assalamualaikum and welcome to Alshafi Group's HR and Corporate Sales Outlook Plan. 
+                        Today we proudly present our strategic initiatives for the new year to achieve excellence in Human Resources Management and Corporate Sales.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: HR Initiatives -->
+            <div id="slide-2" class="slide absolute inset-0 flex flex-col px-8 py-12 opacity-0 pointer-events-none overflow-auto">
+                <h2 class="heading-font text-6xl font-semibold mb-8 text-center gold-accent">Comprehensive Human Resources Initiatives</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">1</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Interdepartmental Meetings</h4>
+                                <p class="text-gray-300">Increasing from 5 to 12 meetings per department annually for better collaboration and performance.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">2</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Professional Hirings</h4>
+                                <p class="text-gray-300">Rigorous selection with tests on Current Affairs, Pakistan Affairs, Science, Accounting, and Fertilizers. Only candidates scoring above 50% proceed.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">3</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Record Management</h4>
+                                <p class="text-gray-300">All employee records will be maintained digitally through our secure HR Portal.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">4</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Performance Appraisal</h4>
+                                <p class="text-gray-300">Daily self-appraisals via portal, reviewed by managers and HR for continuous feedback.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">5</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Training Sessions</h4>
+                                <p class="text-gray-300">Monthly Professional Ethics training. Sales team receives specialized training twice monthly.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-600 flex items-center justify-center flex-shrink-0 text-2xl">6</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Departmental Successors</h4>
+                                <p class="text-gray-300">Managers will identify and prepare high-potential successors for leadership continuity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Additional HR Initiatives -->
+            <div id="slide-3" class="slide absolute inset-0 flex flex-col px-8 py-12 opacity-0 pointer-events-none overflow-auto">
+                <h2 class="heading-font text-6xl font-semibold mb-8 text-center gold-accent">Additional Strategic HR Initiatives</h2>
+                <div class="max-w-4xl mx-auto space-y-10 text-xl">
+                    <div class="flex gap-8 items-start">
+                        <div class="text-6xl text-emerald-500 font-light">7</div>
+                        <div>
+                            <h4 class="font-semibold text-2xl mb-3 emerald-accent">Digital Transformation &amp; Portal Enhancements</h4>
+                            <p class="text-gray-300">Advanced analytics dashboards for real-time insights into employee performance and engagement.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 items-start">
+                        <div class="text-6xl text-emerald-500 font-light">8</div>
+                        <div>
+                            <h4 class="font-semibold text-2xl mb-3 emerald-accent">Employee Wellness Programs</h4>
+                            <p class="text-gray-300">Regular wellness workshops, mental health support, and fitness initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 items-start">
+                        <div class="text-6xl text-emerald-500 font-light">9</div>
+                        <div>
+                            <h4 class="font-semibold text-2xl mb-3 emerald-accent">Diversity &amp; Inclusion Drive</h4>
+                            <p class="text-gray-300">Promoting diversity in hiring and an inclusive workplace culture.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: HR Team -->
+            <div id="slide-4" class="slide absolute inset-0 flex flex-col items-center justify-center px-8 opacity-0 pointer-events-none">
+                <h2 class="heading-font text-6xl font-semibold mb-12 gold-accent text-center">Our Dedicated HR Team</h2>
+                
+                <div class="flex flex-col items-center w-full max-w-5xl">
+                    <!-- HR Manager -->
+                    <div class="mb-12 text-center">
+                        <div class="relative mx-auto w-64 h-64 rounded-3xl overflow-hidden border-4 border-emerald-500/50 shadow-2xl">
+                            <img id="manager-img" 
+                                 src="IMAGES/Ihsan sb.jpeg" 
+                                 alt="IHSANULLAH - HR Manager" 
+                                 class="w-full h-full object-cover team-img">
+                        </div>
+                        <h3 class="mt-6 text-4xl font-semibold gold-accent">IHSANULLAH</h3>
+                        <p class="text-2xl text-emerald-300">HR Manager</p>
+                    </div>
+
+                    <!-- Two HR Assistants -->
+                    <div class="grid grid-cols-2 gap-12 w-full max-w-2xl">
+                        <div class="text-center">
+                            <div class="relative mx-auto w-52 h-52 rounded-3xl overflow-hidden border-4 border-emerald-500/30 shadow-xl">
+                                <img id="assistant1-img" 
+                                     src="IMAGES/HUR (4).png" 
+                                     alt="HUR ABBAS" 
+                                     class="w-full h-full object-cover team-img">
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold gold-accent">HUR ABBAS</h3>
+                            <p class="text-2xl text-emerald-300">HR Assistant</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="relative mx-auto w-52 h-52 rounded-3xl overflow-hidden border-4 border-emerald-500/30 shadow-xl">
+                                <img id="assistant2-img" 
+                                     src="IMAGES/Burhan.png" 
+                                     alt="MUHAMMAD BURHAN" 
+                                     class="w-full h-full object-cover team-img">
+                            </div>
+                            <h3 class="mt-6 text-2xl font-semibold gold-accent">MUHAMMAD BURHAN</h3>
+                            <p class="text-2xl text-emerald-300">Procurement HR Assistant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Corporate Sales -->
+            <div id="slide-5" class="slide absolute inset-0 flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none overflow-auto">
+                <h2 class="heading-font text-6xl font-semibold mb-8 gold-accent">Corporate Sales Outlook</h2>
+                <div class="max-w-3xl mx-auto text-2xl leading-relaxed text-gray-200 mb-10">
+                    Last year we achieved <span class="text-emerald-400 font-semibold">85%</span> of our sales targets despite challenges.<br><br>
+                    This year, we aim for 100% — Insha'Allah — through stronger customer relationships, client retention, and market expansion.<br><br>
+                    We will professionalize Public Affairs and fully digitize External Procurement via our CMS portal.
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white/5 backdrop-blur rounded-3xl p-4 border border-emerald-500/20">
+                        <img src="IMAGES/2025-26.png" alt="85% Sales Achievement Graph" class="rounded-2xl w-full shadow-xl">
+                        <p class="text-center mt-3 text-emerald-300 font-medium text-xl">Last Year - 85% Target Achievement</p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur rounded-3xl p-4 border border-emerald-500/20">
+                        <img src="https://picsum.photos/id/201/700/420" alt="HR & CMS Online Portal" class="rounded-2xl w-full shadow-xl">
+                        <p class="text-center mt-3 text-emerald-300 font-medium text-xl">Our Digital HR &amp; Procurement Portal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Closing -->
+            <div id="slide-6" class="slide absolute inset-0 flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none">
+                <div class="max-w-2xl">
+                    <h2 class="heading-font text-6xl font-semibold mb-10 gold-accent">Together We Rise</h2>
+                    <div class="text-3xl leading-relaxed text-gray-200 mb-12">
+                        With structured initiatives, digital transformation, and collective dedication, we will reach new heights of success.<br><br>
+                        Insha'Allah, this will be our most successful year yet.
+                    </div>
+                    <div class="text-4xl font-light gold-accent mb-8">Thank You</div>
+                    <div class="text-emerald-400 text-2xl">Alshafi Group — Excellence in Human Resources &amp; Corporate Sales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-50">
+            <div onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(2)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(3)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(4)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(5)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+            <div onclick="goToSlide(6)" class="w-3 h-3 rounded-full bg-white/30 hover:bg-emerald-400 cursor-pointer transition slide-dot"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 7;
+        let isPlaying = false;
+        let autoPlayInterval = null;
+        
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.style.opacity = index === n ? '1' : '0';
+                slide.style.pointerEvents = index === n ? 'auto' : 'none';
+            });
+            currentSlide = n;
+            updateDots();
+            speakCurrentSection();
+        }
+        
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+        
+        function prevSlide() {
+            let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+        
+        function goToSlide(n) {
+            showSlide(n);
+        }
+        
+        function updateDots() {
+            const dots = document.querySelectorAll('.slide-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-emerald-400', i === currentSlide);
+                dot.classList.toggle('bg-white/30', i !== currentSlide);
+            });
+        }
+        
+        function toggleAutoPlay() {
+            isPlaying = !isPlaying;
+            const btn = document.getElementById('playBtn');
+            const text = document.getElementById('playText');
+            
+            if (isPlaying) {
+                text.textContent = 'Pause';
+                btn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+                startAutoPlay();
+            } else {
+                text.textContent = 'Auto Play';
+                btn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+                stopAutoPlay();
+                window.speechSynthesis.cancel();
+            }
+        }
+        
+        function startAutoPlay() {
+            stopAutoPlay();
+            speakCurrentSection();
+        }
+        
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+            window.speechSynthesis.cancel();
+        }
+        
+        function speak(text) {
+            if (!('speechSynthesis' in window) || !text) return;
+            
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.72;
+            utterance.pitch = 1.0;
+            utterance.volume = 1.0;
+            
+            const voices = window.speechSynthesis.getVoices();
+            let selectedVoice = voices.find(v => 
+                (v.name.toLowerCase().includes('male') || 
+                 v.name.toLowerCase().includes('daniel') || 
+                 v.name.toLowerCase().includes('david') ||
+                 v.name.toLowerCase().includes('james') ||
+                 v.name.toLowerCase().includes('google uk') ||
+                 v.name.toLowerCase().includes('john')) &&
+                !v.name.toLowerCase().includes('female')
+            ) || voices.find(v => v.lang && v.lang.startsWith('en'));
+            
+            if (selectedVoice) utterance.voice = selectedVoice;
+            
+            utterance.onend = () => {
+                if (isPlaying) {
+                    setTimeout(() => {
+                        let next = (currentSlide + 1) % totalSlides;
+                        showSlide(next);
+                    }, 800);
+                }
+            };
+            
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        function getFullSlideText(slideId) {
+            const slide = document.getElementById(slideId);
+            if (!slide) return '';
+            
+            const clone = slide.cloneNode(true);
+            clone.querySelectorAll('button, img, .fa-solid, .particle').forEach(el => el.remove());
+            
+            let text = clone.innerText || clone.textContent || '';
+            text = text.replace(/\s+/g, ' ').trim();
+            
+            if (currentSlide === 2 || currentSlide === 3) {
+                text = text.replace(/(\d+)\s+/g, '$1. ');
+            }
+            
+            return text;
+        }
+        
+        function speakCurrentSection() {
+            let text = '';
+            const slideId = `slide-${currentSlide}`;
+            
+            text = getFullSlideText(slideId);
+            
+            if (text) speak(text);
+        }
+        
+        function makeSlidesClickableForSpeech() {
+            slides.forEach(slide => {
+                slide.addEventListener('click', (e) => {
+                    if (!e.target.closest('button')) {
+                        speakCurrentSection();
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === ' ') { 
+                e.preventDefault(); 
+                toggleAutoPlay(); 
+            }
+            if (e.key.toLowerCase() === 'r') {
+                speakCurrentSection();
+            }
+        });
+        
+        window.onload = () => {
+            makeSlidesClickableForSpeech();
+            showSlide(0);
+            
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+                window.speechSynthesis.getVoices();
+            }
+            
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.width = p.style.height = (Math.random() * 8 + 4) + 'px';
+                p.style.animationDelay = '-' + Math.random() * 20 + 's';
+                p.style.opacity = Math.random() * 0.5 + 0.3;
+                if (i % 3 === 0) p.style.background = 'rgba(250, 204, 21, 0.35)';
+                document.getElementById('presentation').appendChild(p);
+            }
+        };
+    </script>
+</body>
+</html>
